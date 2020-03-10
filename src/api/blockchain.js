@@ -10,6 +10,13 @@ module.exports = (options) => {
     const {repo,privateBcServiceSettings} = options
     const ipfs = ipfsClient('http://ec2-34-244-163-38.eu-west-1.compute.amazonaws.com:9094/') 
     const cluster = ipfsCluster('ec2-34-244-163-38.eu-west-1.compute.amazonaws.com', '9094', { protocol: 'http' })
+
+
+    router.get('/', async (req,res) => {
+        res.status(status.OK)
+    })
+
+
     router.post('/product', async (req,res) => {
         const productSMData = {
             name: req.body.name
