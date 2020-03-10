@@ -1,4 +1,3 @@
-const farmService = require('./farm.service')
 const blockchainService = require('./blockchain.service')
-
-module.exports = Object.assign({}, {farmService,blockchainService})
+const kafkaService = require('./kafka.service')
+module.exports = Object.assign({}, {blockchainService,kafkaService})

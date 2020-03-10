@@ -26,8 +26,8 @@ const start  = (options) => {
             res.status(500).send('Something went wrong!')
         })
 
-        const productApi = require('../api/products')(options)
-        app.use('/product',productApi)
+        const blockchainApi = require('../api/blockchain')(options)
+        app.use('/bc/',blockchainApi) 
 
 
         const server = app.listen(options.port, () => resolve(server))

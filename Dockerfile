@@ -1,7 +1,13 @@
-FROM node:8-alpine
+FROM node:10-alpine
 
 WORKDIR /app
 
 COPY package.json package-lock.json /app/
 
-RUN npm install 
+RUN apk add --no-cache --virtual .gyp \
+        git \
+        python \
+        make \
+        g++ \
+    && npm install \
+    && apk del .gyp

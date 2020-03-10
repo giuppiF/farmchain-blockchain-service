@@ -9,15 +9,22 @@ const serverSettings = {
     port: process.env.SERVER_PORT || 4000,
 }
 
-const farmServiceSettings = {
-    host: process.env.FARM_SERVER_HOST,
-    port: process.env.FARM_SERVER_PORT
-}
+const kafkaSettings = {
+    server:  process.env.KAFKA_HOST + ':' + process.env.KAFKA_PORT,
+  };
+
+
+const ipfsSettings = {
+    host:  process.env.IPFS_HOST,
+    port:  process.env.IPFS_PORT
+  };
+
 
 //settings blockchain API
-const bcServiceSettings = {
-    host: process.env.BC_SERVER_HOST,
-    port: process.env.BC_SERVER_PORT
+const privateBcServiceSettings = {
+    rpcHost: process.env.PRIVATE_BC_HOST,
+    rpcPort: process.env.PRIVATE_BC_PORT,
 }
-  
-module.exports = Object.assign({}, { dbSettings, serverSettings,farmServiceSettings, bcServiceSettings})
+
+const mediaURL = process.env.MEDIA_URL
+module.exports = Object.assign({}, { dbSettings, serverSettings, privateBcServiceSettings,kafkaSettings,ipfsSettings,mediaURL})
