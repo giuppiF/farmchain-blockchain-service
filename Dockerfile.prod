@@ -1,0 +1,19 @@
+FROM node:10-alpine
+
+WORKDIR /app
+
+COPY ./src/ /app/src/
+
+COPY package.json package-lock.json /app/
+
+RUN mkdir /app/storage
+
+RUN apk add --no-cache --virtual .gyp \
+        git \
+        python \
+        make \
+        g++ \
+    && npm install \
+    && apk del .gyp
+
+CMD ["node","src/index.js" ]
