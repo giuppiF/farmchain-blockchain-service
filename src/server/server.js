@@ -27,7 +27,7 @@ const start  = (options) => {
         })
 
         const blockchainApi = require('../api/blockchain')(options)
-        app.use('/bc/',blockchainApi) 
+        app.use('/blockchain/',blockchainApi) 
 
 
         const server = app.listen(options.port, () => resolve(server))
