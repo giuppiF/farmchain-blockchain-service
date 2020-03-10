@@ -68,7 +68,7 @@ module.exports = (options) => {
         try{
             const bcURL = 'http://'+privateBcServiceSettings.rpcHost + ':' + privateBcServiceSettings.rpcPort
             const web3 = new Web3(bcURL);
-            const {abi, bytecode } = require('../../truffle/build/contracts/IPFSStorage');
+            const {abi, bytecode } = require('../abis/IPFSStorage');
         
             let accounts, contract;
             const smartContractAddress = req.body.smartContractAddress
