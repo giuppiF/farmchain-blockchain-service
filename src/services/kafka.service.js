@@ -16,11 +16,17 @@ const createMedia = async (options,media,producer) => {
     const hash = await hasha.async(buffer, {algorithm: 'md5'})
     media.hash = hash
     
+    delete media.smartContract
+    delete media.muted
+    delete media.__v
+    delete media.type
+    
+
     const doc = JSON.stringify(media);
     const obj = {
       path: 'media',
       content: Buffer.from(doc),
-      name: media._id
+      name: media.hash
     }
    
     var ipfsResponse = await cluster.add(obj)

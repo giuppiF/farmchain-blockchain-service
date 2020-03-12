@@ -21,7 +21,8 @@ mediator.on('db.ready', async (db) => {
         port:  config.serverSettings.port,
         repo: repo,
         kafkaService: kafkaService,
-        privateBcServiceSettings: config.privateBcServiceSettings
+        privateBcServiceSettings: config.privateBcServiceSettings,
+        ipfsSettings: config.ipfsSettings,
     }) 
 
     app.on('close', () => {

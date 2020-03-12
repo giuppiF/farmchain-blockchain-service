@@ -16,7 +16,8 @@ const kafkaSettings = {
 
 const ipfsSettings = {
     host:  process.env.IPFS_HOST,
-    port:  process.env.IPFS_PORT
+    port:  process.env.IPFS_PORT,
+    httpPort: process.env.IPFS_HTTP_PORT
   };
 
 
